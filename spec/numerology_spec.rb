@@ -17,17 +17,17 @@ describe 'Our Numerology App' do
   it "has message in a paragraph" do
     get '/01012000'
     expect(last_response.body).to include("<p>Your numerology number is")
-  end    
+  end
 
-  it 'responds to a get request to message/:birth_path_num' do
+  it 'responds to a get request to message/:number' do
     get '/message/7'
     expect(last_response).to be_ok
   end
 
   it "responds to a post to / with a redirect" do
-    # This test just checks that a post request is 
+    # This test just checks that a post request is
     # accepted with a birthdate parameter
-    post("/", { birthdate: '09031994' })
+    post("/", { birthday: '09031994' })
     expect(last_response.redirect?).to eq(true)
   end
 
@@ -44,22 +44,21 @@ describe 'Our Numerology App' do
 
   SpecHelper::NUMEROLOGY.each do |num, details|
     it "returns the correct number for #{num}" do
-      get("/#{details[:birthdate]}")
+      get("/#{details[:birthday]}")
       expect(last_response.body).to match(/#{details[:message]}/)
     end
   end
 
   it "displays an error message if the input is too short" do
-    birthdate = '090319'
-    post("/", { birthdate: birthdate })
+    birthday = '090319'
+    post("/", { birthday: birthday })
     expect(last_response).to match(/#{'You should enter a valid birthdate in the form of mmddyyyy.'}/)
   end
 
   it "displays an error message if the input is non-numeric" do
-    birthdate = '12axy3jk'
-    post("/", { birthdate: birthdate })
+    birthday = '12axy3jk'
+    post("/", { birthday: birthday })
     expect(last_response).to match(/#{'You should enter a valid birthdate in the form of mmddyyyy.'}/)
-  end  
-    
-end
+  end
 
+end

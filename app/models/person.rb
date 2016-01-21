@@ -14,7 +14,7 @@ class Person < ActiveRecord::Base
     return number
   end
 
-  def display_message(number)
+  def self.display_message(number)
 
   case number
   when 1
@@ -41,4 +41,11 @@ class Person < ActiveRecord::Base
   end
 
 
+def self.valid_birthdate(input)
+	if(input.length == 8 && !input.match(/^[0-9]+[0-9]$/).nil?)
+		true
+	else
+		false
+	end
+end
 end
