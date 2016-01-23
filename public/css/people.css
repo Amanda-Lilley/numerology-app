@@ -1,0 +1,10 @@
+a {
+  text-decoration: underline;
+  font-weight: bold;
+  color: purple;
+}
+.btn  {
+  background-color: purple;
+  color: #fff;
+  margin-top: 15px;
+}
