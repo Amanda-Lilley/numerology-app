@@ -1,0 +1,21 @@
+<!--  <% if !@error.nil? %>
+  <p><%= @error %></p>
+<% end %>
+  <div class="col-md-4">
+    <h2 id="frontPage">Find out your numerology number!</h2>
+<form class="col-md-3" action="/" method="post">
+  <div class="form=group"><label for="birthday">Enter your birth date</label>
+  <input class="form-control" type="date" name="birthday" /> </div>
+  <input class="btn btn-default" type="submit" />
+</form>
+</div>
+
+
+<a href="/people/new" class="btn">Find out!</a>
+<!--
+# <button class="btn btn-default">
+     <img src="http://i.stack.imgur.com/e2S63.png" width="20" /> Sign In with Facebook
+</button>
+<img src="" />
+-->
+__>

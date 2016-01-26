@@ -15,8 +15,16 @@ post '/people' do
     birthday = Date.strptime(params[:birthday], "%m%d%Y")
   end
 
-  @person = Person.create(first_name: params[:first_name], last_name: params[:last_name], birthday: params[:birthday])
+  person = Person.create(first_name: params[:first_name], last_name: params[:last_name], birthday: params[:birthday])
+  if @person.valid?
+    @person.save
   redirect "/people/#{@person.id}"
+else
+  @person.errors.full_messages.each do |message|
+    @errors = "#{@errors} #{message}."
+  end
+    erb :"/people/new"
+  end
 end
 
 get '/people/:id' do
@@ -37,8 +45,15 @@ put '/people/:id' do
   @person.first_name = params[:first_name]
   @person.last_name = params[:last_name]
   @person.birthday = params[:birthday]
-  @person.save
+  if @person.valid?
+    @person.save
   redirect "/people/#{@person.id}"
+else
+  @person.errors.full_messages.each do |message|
+    @errors= "#{@errors} #{message}"
+end
+  erb :"people/edit"
+end
 end
 
 delete '/people/:id' do

@@ -1,5 +1,5 @@
 class Person < ActiveRecord::Base
-
+  validates_presence_of :birthday, :first_name, :last_name
   def self.determine_birth_number(birthday)
   number = birthday[0].to_i + birthday[1].to_i + birthday[2].to_i + birthday[3].to_i + birthday[4].to_i + birthday[5].to_i + birthday[6].to_i + birthday[7].to_i
 

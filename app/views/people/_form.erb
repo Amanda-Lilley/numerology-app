@@ -1,23 +1,45 @@
+<% if !@errors.nil? %>
+<p class="errors">
+  <%= "#{@errors}" %>
+</p>
+<% end %>
+
 <form action="<%= people_form_action(@person) %>" method="post" id="<%= people_form_id(@person) %>" class="<%= people_form_class(@person) %>" >
 <input type="hidden" name="_method" value="<%= people_form_method(@person) %>" />
 
-<div>
-<label for="first_name">First Name:</label>
-<input type="text" name="first_name" value="<%= @person.first_name %>" />
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <label for="first_name">First Name:</label>
+      <input class="form-control" type="text" name="first_name" value="<%= @person.first_name %>" />
+   </div>
+  </div>
 </div>
 
-<div>
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
 <label for="last_name">Last Name:</label>
-<input type="text" name="last_name" value="<%= @person.last_name %>" />
+<input class="form-control" type="text" name="last_name" value="<%= @person.last_name %>" />
+    </div>
+  </div>
 </div>
 
-<div>
+<div class="form-group">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
 <label for="birthday">Birthdate:</label>
-<input type="date" name="birthday" value="<%= @person.birthday %>" />
+<input class="form-control" type="date" name="birthday" value="<%= @person.birthday %>" />
+    </div>
+  </div>
 </div>
 
 <div>
-<input type="submit" />
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+<input class="btn btn-default" type="submit" />
+    </div>
+  </div>
 </div>
 
 </form>
