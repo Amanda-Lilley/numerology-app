@@ -1,3 +1,3 @@
-# skillcrush_204_challenges
+# Skillcrush NUmerology App
 skillcrush 204 Challenges
-Skillcrush Numerology App
+
