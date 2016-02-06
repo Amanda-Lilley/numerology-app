@@ -8,3 +8,26 @@ a {
   color: #fff;
   margin-top: 15px;
 }
+.btn {
+  width: 350px;
+  height: 40px;
+}
+
+.form-control {
+  height: 65px;
+  font-size: 18px;
+}
+
+#main-paragraph {
+  font-size: 18px;
+  display: inline;
+}
+
+
+.message {
+  font-size: 18px;
+}
+
+.buttons {
+  display: block;
+}

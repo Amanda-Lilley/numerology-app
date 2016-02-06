@@ -3,7 +3,10 @@
 <h3>Your birthday is: <%="#{@person.birthday.strftime("%^B_%d_%y")}"%></h3>
 
 <div class="well">
-<p><%= @message %></p>
+<p class="message"><%= @message %></p>
 </div>
 
-<a href="/" class="btn">Home</a>
+
+<a href="/" class="btn buttons">Home</a>
+<a href="/people/new" class="btn buttons">New Entry</a>
+<a href="/people" class="btn buttons">Browse Entries</a>
