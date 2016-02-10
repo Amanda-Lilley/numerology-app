@@ -10,7 +10,7 @@ end
 
 post '/people' do
   if params[:birthday].include?("-")
-    birthday = params[:birthday]
+    birthday = params[:birthday].gsub("-", "") #.gsub("-", "")
   else
     birthday = Date.strptime(params[:birthday], "%m%d%y")
   end
